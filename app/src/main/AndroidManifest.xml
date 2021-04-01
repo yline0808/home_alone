@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.myapplication">
+
+    <permission
+        android:name="com.example.myapplication.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.example.myapplication.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/main"
+        android:label="한림을 걷다"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".CourseViewActivity"></activity>
+        <activity android:name=".GetCourseActivity" />
+        <activity android:name=".QrActivity" />
+        <activity android:name=".MyPageActivity" />
+        <activity android:name=".WriteActivity" />
+        <activity android:name=".CommentActivity" />
+        <activity android:name=".CommunityActivity" />
+        <activity android:name=".MakeCourseActivity" />
+        <activity android:name=".MapCourseActivity" />
+        <activity android:name=".CourseSelActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SigninActivity" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.vision"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAFiXEmvjUP0zPRYbQsGnBpJkyF4JPsVak" />
+
+        <uses-library android:name="com.google.android.maps" />
+    </application>
+
+</manifest>

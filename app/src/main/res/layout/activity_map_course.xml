@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/imgbtnqr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/qr"
+            android:background="#00000000"
+            android:layout_margin="16dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/map_layout_background"
+        android:padding="8dp"
+        android:elevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp">
+
+            <ImageView
+                android:id="@+id/imgvNow"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/runwalk"
+                android:layout_gravity="bottom|right"/>
+
+            <TextView
+                android:id="@+id/txtvCourseTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="현재코스 : " />
+
+            <TextView
+                android:id="@+id/txtvMyLoc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="내위치 가려짐"/>
+
+            <ImageButton
+                android:id="@+id/imgbtnSetting"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:src="@drawable/setting"
+                android:scaleType="fitXY"
+                android:background="#00000000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtvPT"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="00.00 %"
+                    android:textSize="13dp"/>
+
+                <ProgressBar
+                    android:id="@+id/pgbProgress"
+                    android:layout_gravity="center"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:indeterminate="false"
+                    android:progressDrawable="@drawable/circular_map_progress_bar"
+                    android:background="@drawable/circle_map_shape"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:max="10000"
+                    android:progress="-1"/>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="65dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="right|center_vertical"
+                android:layout_marginRight="4dp">
+
+                <TextView
+                    android:id="@+id/txtvWalk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000 보"/>
+
+                <TextView
+                    android:id="@+id/txtvKm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00.00 km"/>
+
+                <TextView
+                    android:id="@+id/txtvKcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0 kcal"/>
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btnStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="시  작"
+                    android:textSize="30dp"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/button_background"
+                    android:elevation="10dp"/>
+
+                <LinearLayout
+                    android:id="@+id/llSetting"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_margin="8dp"
+                    android:visibility="invisible">
+
+                    <Switch
+                        android:id="@+id/swcLocMy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="내위치 공개"
+                        android:checked="true"/>
+
+                    <Switch
+                        android:id="@+id/swcLocFr"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="친구 위치 표시"
+                        android:checked="true"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
